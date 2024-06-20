@@ -1,0 +1,22 @@
+.home-action {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 480rem;
+    padding-top: 90rem;
+    background: var(--color-black);
+    text-align: center;
+
+    &__logo {
+        width: 32rem;
+        height: 32rem;
+        margin-bottom: 16rem;
+    }
+
+    &__title {
+        width: 640rem;
+        color: var(--color-white);
+        letter-spacing: -1rem;
+        margin-bottom: 32rem;
+    }
+}

@@ -1,4 +1,4 @@
-.home-innovation {
+.home-blogs {
     display: flex;
     flex-direction: column;
 
@@ -10,7 +10,8 @@
     &__subtitle {
         position: relative;
         padding-left: 36rem;
-        margin: 12rem 166rem 0 0;
+        margin: 13rem 186rem 0 0;
+        white-space: nowrap;
 
         &::before {
             content: "";
@@ -24,19 +25,41 @@
         }
     }
 
+    &__title {
+        width: 700rem;
+    }
+
     &__cards {
         display: flex;
         gap: 32rem;
     }
 
     &__card {
+        position: relative;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        max-width: 416rem;
-        height: 408rem;
+        width: 416rem;
+        height: 368rem;
         padding: 32rem;
+        color: var(--color-white);
         border: 1rem solid var(--color-gray-300);
+
+        &.black {
+            color: var(--color-black);
+        }
+
+        &.bg-gray {
+            background: var(--color-gray-300);
+        }
+
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            @include imageContain(center);
+            z-index: -1;
+        }
 
         &-lables {
             display: flex;
@@ -48,10 +71,21 @@
                 height: 48rem;
             }
         }
+
         &-title {
             margin-bottom: 8rem;
             font: var(--font-body-xl);
             letter-spacing: -1rem;
+        }
+
+        &-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        &-date {
+            font: var(--font-body-s);
         }
     }
 }

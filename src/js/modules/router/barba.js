@@ -1,6 +1,5 @@
 import barba from "@barba/core"
 import gsap from "gsap"
-import { slideTransitionEnter, slideTransitionLeave } from "./animations/index.js"
 
 barba.init({
     transitions: [

@@ -98,6 +98,11 @@
     &__social-icons {
         display: flex;
         gap: 16rem;
+
+        img {
+            width: 24rem;
+            height: 24rem;
+        }
     }
 
     &__сopyright {

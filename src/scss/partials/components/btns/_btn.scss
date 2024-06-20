@@ -3,7 +3,7 @@
     align-items: center;
     justify-content: center;
     background: var(--color-primary-light-green);
-    color: var(--color-black);
+    color: var(--color-black) !important;
     font: var(--button-m);
     padding: 16rem 24rem;
     border-radius: 8px;

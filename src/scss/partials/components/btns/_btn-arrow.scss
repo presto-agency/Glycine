@@ -1,7 +1,8 @@
 .btn-arrow {
+    position: relative;
     display: flex;
     gap: 12rem;
-    position: relative;
+    width: max-content;
     overflow: hidden;
 
     &__icon-box {
@@ -10,8 +11,9 @@
         justify-content: center;
         width: 32rem;
         height: 32rem;
-        background: var(--color-primary-light-green);
         border-radius: 50%;
+        background: var(--color-primary-light-green);
+
         position: relative;
         overflow: hidden;
         transition: background 0.3s;
@@ -20,8 +22,8 @@
             background: var(--color-primary-hover);
         }
 
-        &:before,
-        &:after {
+        &::before,
+        &::after {
             content: "";
             position: absolute;
             width: 6rem;
@@ -32,53 +34,57 @@
             transition: transform 0.3s ease;
         }
 
-        &:before {
+        &::before {
             transform: translateX(-30rem);
         }
 
-        &:after {
+        &::after {
             transform: translateX(0);
         }
     }
 
     &__text {
+        display: flex;
+        align-items: center;
         position: relative;
-        transition: transform 0.3s ease;
 
-        &:before,
-        &:after {
-            content: "Learn more";
+        .text-main,
+        .text-overlay {
             white-space: nowrap;
-            position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            position: relative;
             transition: transform 0.3s ease;
         }
 
-        &:before {
-            transform: translateY(0);
-        }
-
-        &:after {
-            transform: translateY(40rem);
+        .text-overlay {
+            transform: translate(-86rem, 40rem);
         }
     }
 
     &:hover {
         cursor: pointer;
 
-        .btn-arrow__icon-box:before {
+        .btn-arrow__icon-box::before {
             transform: translateX(0);
         }
         .btn-arrow__icon-box::after {
             transform: translateX(30rem);
         }
-        .btn-arrow__text {
+        .btn-arrow__text .text-main {
             transform: translateY(-40rem);
+        }
+        .btn-arrow__text .text-overlay {
+            transform: translate(-86rem, 0);
+        }
+    }
+
+    &.withoutText {
+        .btn-arrow__text {
+            display: none;
+        }
+    }
+    &.white {
+        .btn-arrow__icon-box {
+            background: var(--color-white);
         }
     }
 }

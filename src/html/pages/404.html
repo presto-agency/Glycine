@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+    @@include("components/head.html", {"title": "Page not found"})
+
+    <body>
+        <main class="pnf">
+            <p class="pnf__subtitle">Oops...</p>
+            <h1 class="pnf__title h1">Page not found</h1>
+            <hr class="hr" />
+            <p class="pnf__description">
+                Sorry, the page you are looking for doesn't exist. Here are some helpful links:
+            </p>
+            @@include('./components/buttons/action-btn.html', {"lableText": "Go back", "btnStyle":
+            "btn", "href": "/index.html"})
+        </main>
+        <script src="js/app.min.js"></script>
+    </body>
+</html>

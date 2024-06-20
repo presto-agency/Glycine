@@ -1,0 +1,21 @@
+.home-advantages {
+    &__title {
+        position: relative;
+        padding-left: 36rem;
+        margin-bottom: 24rem;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 24rem;
+            height: 24rem;
+            background-image: url("../img/svgicons/leaf-gray.svg");
+            background-repeat: no-repeat;
+        }
+    }
+
+    &__text {
+    }
+}

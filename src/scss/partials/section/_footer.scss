@@ -1,0 +1,109 @@
+.footer {
+    display: flex;
+    height: 524rem;
+    padding: 48rem 56rem 24rem;
+    background: var(--color-gray-200);
+
+    &__left-side,
+    &__right-side {
+        flex: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    &__logo {
+        width: 135rem;
+        height: 36rem;
+        margin-bottom: 40rem;
+    }
+
+    &__nav {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 12rem;
+        max-width: 434rem;
+        white-space: nowrap;
+        text-transform: capitalize;
+        letter-spacing: -1rem;
+        img {
+            width: 23rem;
+            height: 24rem;
+        }
+    }
+
+    &__developer {
+        display: inline-flex;
+        align-items: center;
+        gap: 12rem;
+
+        &-logo {
+            width: 121rem;
+            height: 20rem;
+            position: relative;
+            display: inline-block;
+
+            img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                @include imageContain(center);
+                transition: opacity var(--transition-duration) var(--transition-easing);
+
+                &:nth-child(1) {
+                    opacity: 1;
+                }
+
+                &:nth-child(2) {
+                    opacity: 0;
+                }
+            }
+        }
+
+        @include hover($md) {
+            &:hover {
+                img {
+                    &:nth-child(1) {
+                        opacity: 0;
+                    }
+
+                    &:nth-child(2) {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+
+    &__info {
+        font: var(--font-body-s);
+        display: flex;
+        justify-content: space-between;
+
+        &-title {
+            color: var(--color-gray-700);
+            margin-bottom: 32rem;
+            white-space: nowrap;
+        }
+    }
+
+    &__contacts {
+        display: flex;
+        flex-direction: column;
+        gap: 24rem;
+        width: 190rem;
+    }
+
+    &__social-icons {
+        display: flex;
+        gap: 16rem;
+    }
+
+    &__сopyright {
+        display: flex;
+        justify-content: space-between;
+        font: var(--font-body-xs);
+        color: var(--color-gray-700);
+    }
+}

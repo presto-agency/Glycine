@@ -1,0 +1,77 @@
+h1,
+.h1 {
+    font: var(--font-h1);
+
+    @include smallDevices($sm) {
+        font: var(--font-h1-mobile);
+    }
+}
+
+h2,
+.h2 {
+    font: var(--font-h2);
+
+    @include smallDevices($sm) {
+        font: var(--font-h2-mobile);
+    }
+}
+
+h3,
+.h3 {
+    font: var(--font-h3);
+
+    @include smallDevices($sm) {
+        font: var(--font-h3-mobile);
+    }
+}
+
+h4,
+.h4 {
+    font: var(--font-h4);
+
+    @include smallDevices($sm) {
+        font: var(--font-h4-mobile);
+    }
+}
+
+h5,
+.h5 {
+    font: var(--font-h5);
+
+    @include smallDevices($sm) {
+        font: var(--font-h5-mobile);
+    }
+}
+
+h6,
+.h6 {
+    font: var(--font-body-l);
+
+    @include smallDevices($sm) {
+        font: var(--font-body-l-mobile);
+    }
+}
+
+p {
+    font: inherit;
+}
+
+strong,
+b {
+    font-weight: 700;
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5 {
+    i {
+        font-style: normal;
+    }
+}
+
+.decorative {
+    font: var(--decorative);
+    letter-spacing: -8rem;
+}

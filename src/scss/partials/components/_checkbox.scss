@@ -1,0 +1,57 @@
+.checkbox-wrapper {
+    width: 24rem;
+    height: 24rem;
+    padding: 3rem;
+
+    .checkbox {
+        display: block;
+        position: relative;
+        cursor: pointer;
+
+        & input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 0;
+            width: 0;
+        }
+
+        &[disabled] .checkmark {
+            background: #bdc4bf;
+            pointer-events: none;
+            border: none;
+        }
+
+        .checkmark {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 18rem;
+            height: 18rem;
+            border: 2rem solid #8c8c8c;
+            transition: border-color 0.3s ease;
+
+            &::after {
+                content: "";
+                position: absolute;
+                display: none;
+                width: 12rem;
+                height: 9rem;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background-image: url("../img/svgicons/check.svg");
+                background-size: contain;
+                background-repeat: no-repeat;
+            }
+        }
+    }
+
+    & input:checked ~ .checkmark::after {
+        display: block;
+    }
+
+    & input:checked + .checkmark {
+        border-color: #191919;
+    }
+}

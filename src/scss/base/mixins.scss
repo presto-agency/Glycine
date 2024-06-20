@@ -1,0 +1,52 @@
+@mixin font($font_name, $file_name, $weight, $style) {
+    @font-face {
+        font-family: $font_name;
+        font-display: swap;
+        src: url("../fonts/#{$file_name}.woff") format("woff"),
+            url("../fonts/#{$file_name}.woff2") format("woff2");
+        font-weight: #{$weight};
+        font-style: #{$style};
+    }
+}
+
+@mixin hover($width) {
+    $largeDevices: "width >= #{$width}px";
+    @media only screen and (#{$largeDevices}), (any-hover: hover) {
+        @content;
+    }
+}
+
+@mixin largeDevices($width) {
+    $largeDevices: "width >= #{$width}px";
+    @media (#{$largeDevices}) {
+        @content;
+    }
+}
+
+@mixin smallDevices($width) {
+    $smallDevices: "width < #{$width}px";
+    @media (#{$smallDevices}) {
+        @content;
+    }
+}
+
+@mixin minHeight($height) {
+    $minHeight: "min-height: #{$height}px";
+    @media only screen and (#{minHeight}) {
+        @content;
+    }
+}
+
+@mixin imageCover($position) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: $position;
+}
+
+@mixin imageContain($position) {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: $position;
+}

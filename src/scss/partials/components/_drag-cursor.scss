@@ -1,0 +1,23 @@
+.drag {
+    &-cursor {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        width: 64rem;
+        height: 64rem;
+        border-radius: 50%;
+        border: 1rem solid var(--color-primary-light-green);
+        background: var(--color-white);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity var(--transition-duration) var(--transition-easing);
+
+        &__label {
+            font: var(--font-body-xs);
+        }
+    }
+}

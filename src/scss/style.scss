@@ -1,0 +1,38 @@
+@import "base/variables";
+@import "base/mixins";
+@import "base/reset";
+@import "base/fonts";
+@import "base/typography";
+@import "base/global";
+@import "base/classes";
+@import "partials/**/*.scss";
+
+// html,
+// body {
+//     margin: 0;
+//     padding: 0;
+//     height: 100%;
+//     // overflow-x: hidden;
+// }
+
+// #animation-container {
+//     position: relative;
+//     width: 100%;
+//     height: 50vh;
+//     overflow: hidden;
+// }
+
+// .frame {
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     width: 100%;
+//     height: 100%;
+//     background-size: contain;
+//     background-repeat: no-repeat;
+//     transition: opacity 0.5s ease;
+// }
+
+// #content {
+//     padding: 20px;
+// }

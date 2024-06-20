@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    @@include("components/head.html", {"title": "Glycine / Home page"})
+
+    <body>
+        @@include('sections/header.html')
+        <div data-barba="wrapper">
+            <main data-barba="container" data-barba-namespace="home">
+                <!-- <div class="preloader" id="preloader"></div> -->
+                @@include('sections/home/home-hero.html')
+                @@include('sections/home/home-advantages.html')
+                @@include('sections/home/home-slider.html')
+                @@include('sections/home/home-about.html')
+                @@include('sections/home/home-innovation.html')
+                @@include('sections/home/home-investors.html')
+            </main>
+        </div>
+        @@include('sections/footer.html')
+        <script src="js/app.min.js"></script>
+    </body>
+</html>

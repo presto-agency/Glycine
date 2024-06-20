@@ -1,0 +1,90 @@
+.btn-arrow {
+    display: flex;
+    gap: 12rem;
+    position: relative;
+    overflow: hidden;
+
+    &__icon-box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 32rem;
+        height: 32rem;
+        background: var(--color-primary-light-green);
+        border-radius: 50%;
+        position: relative;
+        overflow: hidden;
+        transition: background 0.3s;
+
+        &:hover {
+            background: var(--color-primary-hover);
+        }
+
+        &:before,
+        &:after {
+            content: "";
+            position: absolute;
+            width: 6rem;
+            height: 10rem;
+            background-image: url("../img/svgicons/arrow-right.svg");
+            background-size: contain;
+            background-repeat: no-repeat;
+            transition: transform 0.3s ease;
+        }
+
+        &:before {
+            transform: translateX(-30rem);
+        }
+
+        &:after {
+            transform: translateX(0);
+        }
+    }
+
+    &__text {
+        position: relative;
+        transition: transform 0.3s ease;
+
+        &:before,
+        &:after {
+            content: "Learn more";
+            white-space: nowrap;
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease;
+        }
+
+        &:before {
+            transform: translateY(0);
+        }
+
+        &:after {
+            transform: translateY(40rem);
+        }
+    }
+
+    &:hover {
+        cursor: pointer;
+
+        .btn-arrow__icon-box:before {
+            transform: translateX(0);
+        }
+        .btn-arrow__icon-box::after {
+            transform: translateX(30rem);
+        }
+        .btn-arrow__text {
+            transform: translateY(-40rem);
+        }
+    }
+}
+
+/* states */
+.btn-arrow [disabled] {
+    opacity: 0.24;
+    pointer-events: none;
+}

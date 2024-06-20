@@ -1,0 +1,24 @@
+.pnf {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100svh;
+
+    &__subtitle {
+        font: var(--font-body-m-b);
+        color: var(--color-primary-green);
+        margin-bottom: 16rem;
+    }
+
+    &__title {
+        font: var(--decorative);
+        margin-bottom: 64rem;
+    }
+
+    &__description {
+        max-width: 416rem;
+        margin-bottom: 32rem;
+        text-align: center;
+    }
+}

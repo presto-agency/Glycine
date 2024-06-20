@@ -1,0 +1,70 @@
+/* Breakpoints */
+$xs: 576;
+$sm: 768;
+$md: 992;
+$lg: 1200;
+$xl: 1400;
+
+:root {
+    /* Fonts */
+    --font-family-primary: "Inter";
+
+    /* Headings */
+    --font-h1: 400 96rem / 1.05em var(--font-family-primary);
+    --font-h2: 400 56rem / 1.16em var(--font-family-primary);
+    --font-h3: 400 38rem / 1.2em var(--font-family-primary);
+    --font-h4: 400 28rem / 1.2em var(--font-family-primary);
+    /* Headings mobile */
+    --font-h1-mobile: 400 48rem / 1em var(--font-family-primary);
+    --font-h2-mobile: 400 32rem / 1em var(--font-family-primary);
+    --font-h3-mobile: 400 32rem / 1em var(--font-family-primary);
+    --font-h4-mobile: 400 24rem / 1em var(--font-family-primary);
+
+    /* Body */
+    --font-body-xl: 400 24rem / 1.4em var(--font-family-primary);
+    --font-body-l: 500 19rem / 1.58em var(--font-family-primary);
+    --font-body-m: 400 16rem / 1.44em var(--font-family-primary);
+    --font-body-m-b: 600 16rem / 1.44em var(--font-family-primary);
+    --font-body-s: 400 14rem / 1.56em var(--font-family-primary);
+    --font-body-xs: 400 12rem / 1.4em var(--font-family-primary);
+    /* Body mobile */
+    --font-body-xl-mobile: 400 15rem / 1em var(--font-family-primary);
+    --font-body-l-mobile: 400 15rem / 1em var(--font-family-primary);
+    --font-body-m-mobile: 400 15rem / 1em var(--font-family-primary);
+    --font-body-m-b-mobile: 400 15rem / 1em var(--font-family-primary);
+    --font-body-s-mobile: 400 15rem / 1em var(--font-family-primary);
+    --font-body-xs-mobile: 400 15rem / 1em var(--font-family-primary);
+
+    /* Other text size */
+    --button-l: 500 16rem / 1.4em var(--font-family-primary);
+    --button-m: 500 15rem / 1.4em var(--font-family-primary);
+    --decorative: 400 120rem / 1.08em var(--font-family-primary);
+
+    /* Colors */
+    --color-black: #0e272c;
+    --color-gray-800: #555856;
+    --color-gray-700: #7f8380;
+    --color-gray-600: #a9aeab;
+    --color-gray-500: #bdc4bf;
+    --color-gray-400: #e8e9e7;
+    --color-gray-300: #f0f1f0;
+    --color-gray-200: #f8f9f7;
+    --color-white: #fff;
+
+    --color-primary-green: #63af43;
+    --color-primary-light-green: #c5d51a;
+    --color-primary-hover: #d8e925;
+    --color-primary-light2-green: #def9d5;
+    --color-primary-orange: #ffbf0d;
+    --color-primary-black: #002b31;
+
+    --color-toggle-on: #62e6ac;
+
+    --color-system-success: #21d184;
+    --color-system-error: #ff5c5c;
+    --color-system-link: #3870ff;
+
+    /* Transitions */
+    --transition-duration: 0.5s;
+    --transition-easing: ease;
+}

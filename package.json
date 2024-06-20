@@ -1,0 +1,51 @@
+{
+    "name": "gulp-2024",
+    "version": "1.0.0",
+    "description": "",
+    "main": "gulpfile.js",
+    "type": "module",
+    "scripts": {
+        "dev": "gulp",
+        "build": "gulp build --build",
+        "otfToTtf": "gulp otfToTtf"
+    },
+    "author": "Studiopresto",
+    "license": "ISC",
+    "devDependencies": {
+        "autoprefixer": "^10.4.19",
+        "browser-sync": "^3.0.2",
+        "del": "^7.1.0",
+        "gulp": "^4.0.2",
+        "gulp-autoprefixer": "^9.0.0",
+        "gulp-clean-css": "^4.3.0",
+        "gulp-dart-sass": "^1.1.0",
+        "gulp-file-include": "^2.3.0",
+        "gulp-fonter-fix": "^0.0.1",
+        "gulp-group-css-media-queries": "^1.2.2",
+        "gulp-htmlmin": "^5.0.1",
+        "gulp-if": "^3.0.0",
+        "gulp-newer": "^1.4.0",
+        "gulp-notify": "^4.0.0",
+        "gulp-rename": "^2.0.0",
+        "gulp-sass": "^5.1.0",
+        "gulp-sass-glob": "^1.1.0",
+        "gulp-size": "^5.0.0",
+        "gulp-sourcemaps": "^3.0.0",
+        "gulp-svg-sprite": "^2.0.3",
+        "gulp-ttf2woff2": "^4.0.1",
+        "gulp-version-number": "^0.2.4",
+        "gulp-webp-html-nosvg": "^1.1.1",
+        "postcss": "^8.4.38",
+        "sass": "^1.77.0",
+        "sharp": "^0.33.4",
+        "splitting": "^1.0.6",
+        "ukiyojs": "^4.2.0",
+        "webpack": "^5.91.0",
+        "webpack-stream": "^7.0.0"
+    },
+    "dependencies": {
+        "@barba/core": "^2.10.0",
+        "gsap": "^3.12.5",
+        "gulp-postcss": "^10.0.0"
+    }
+}

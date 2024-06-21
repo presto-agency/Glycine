@@ -5,6 +5,7 @@
 @import "base/typography";
 @import "base/global";
 @import "base/classes";
+@import "libs/splide.min.scss";
 @import "partials/**/*.scss";
 
 // html,
@@ -36,3 +37,89 @@
 // #content {
 //     padding: 20px;
 // }
+$width: 400px;
+$height: 250px;
+$primary_color: #a4a4a4;
+$border_color--hover: lighten($primary_color, 80);
+$stroke: 2px;
+$border: $stroke solid darken($primary_color, 10);
+$transition_duration: 1000ms;
+$pipes: 4;
+
+@function border-pipeline($transition_duration, $pipe) {
+    @return $transition_duration * $pipe;
+}
+
+@mixin border-animation($dimension, $pipe) {
+    transition: $transition_duration $dimension linear border-pipeline($transition_duration, $pipe);
+}
+
+.box {
+    width: $width;
+    height: $height;
+    background: #000;
+    border: $border;
+    position: relative;
+    top: 50px;
+    cursor: pointer;
+    transition: ($transition_duration * $pipes) + $transition_duration ease;
+    &:before {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: $stroke;
+        background: #ff3535;
+        top: -$stroke;
+        left: -$stroke;
+        @include border-animation(width, 3);
+    }
+    &:after {
+        position: absolute;
+        width: $stroke;
+        height: 0;
+        content: "";
+        background: #ff3535;
+        top: -$stroke;
+        right: -$stroke;
+        @include border-animation(height, 2);
+    }
+    &-inner:after {
+        position: absolute;
+        width: 0;
+        height: $stroke;
+        content: "";
+        background: #ff3535;
+        bottom: -$stroke;
+        right: -$stroke;
+        @include border-animation(width, 1);
+    }
+    &-inner:before {
+        position: absolute;
+        width: $stroke;
+        height: 0;
+        content: "";
+        background: #ff3535;
+        bottom: -$stroke;
+        left: -$stroke;
+        @include border-animation(height, 0);
+    }
+    &:hover {
+        border-color: transparent;
+        &:before {
+            width: $width;
+            @include border-animation(width, 0);
+        }
+        &:after {
+            height: $height;
+            @include border-animation(height, 1);
+        }
+        .box-inner:after {
+            width: $width;
+            @include border-animation(width, 2);
+        }
+        .box-inner:before {
+            height: $height;
+            @include border-animation(height, 3);
+        }
+    }
+}

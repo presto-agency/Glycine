@@ -91,8 +91,11 @@
     &__contacts {
         display: flex;
         flex-direction: column;
-        gap: 24rem;
         width: 190rem;
+
+        > :not(:first-child) {
+            margin-bottom: 24rem;
+        }
     }
 
     &__social-icons {

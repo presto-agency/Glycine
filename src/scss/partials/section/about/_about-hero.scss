@@ -1,0 +1,46 @@
+.about-hero {
+    position: relative;
+    height: calc(100vh - 8rem);
+    padding-top: 165rem;
+    text-align: center;
+
+    &__bg {
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+    }
+
+    &__btn {
+        position: relative;
+        font: var(--font-body-m);
+        padding: 12rem 16rem 13rem 48rem;
+        margin-bottom: 16rem;
+        color: var(--color-primary-green);
+        background: var(--color-primary-black);
+        border-radius: 100rem;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 12rem;
+            left: 16rem;
+            width: 24rem;
+            height: 24rem;
+            background-image: url("../img/svgicons/leaf.svg");
+            background-repeat: no-repeat;
+        }
+    }
+
+    &__title {
+        margin-bottom: 32rem;
+        color: var(--color-primary-light2-green);
+        letter-spacing: -3rem;
+    }
+
+    &__subtitle {
+        display: inline-block;
+        width: 476rem;
+        color: var(--color-white);
+        font: var(--font-body-xl);
+    }
+}

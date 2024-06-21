@@ -1,28 +1,26 @@
 .home-slider {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding-top: 80rem;
-    padding-bottom: 64rem;
-    height: 778rem;
-    color: var(--color-white);
-
-    &__banner {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        z-index: -1;
+    &.section {
+        padding: 0;
     }
+    &__slide {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 80rem 56rem 64rem;
+        height: 778rem;
+        color: var(--color-white);
 
-    &__text {
-        width: 1088rem;
-    }
+        &-banner {
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+        }
 
-    &__pagination {
-        &-number {
+        &-title {
+            width: 1088rem;
+        }
+
+        &-pagination {
             margin-bottom: 24rem;
 
             span {
@@ -35,26 +33,22 @@
             justify-content: space-between;
             margin-top: 32rem;
         }
+    }
+
+    &__info {
+        &-wrapper {
+            display: flex;
+            gap: 16rem;
+        }
+        &-icon {
+            width: 32rem;
+            height: 32rem;
+            background-repeat: no-repeat;
+        }
         &-text {
             position: relative;
             width: 224rem;
-            padding-left: 48rem;
             font: var(--font-body-s);
-
-            &::before {
-                content: "";
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 32rem;
-                height: 32rem;
-                background-repeat: no-repeat;
-            }
-            &:nth-child(1) {
-                &::before {
-                    background-image: url("../img/svgicons/south-africa.svg");
-                }
-            }
         }
         &-desc {
             width: 640rem;
@@ -67,6 +61,8 @@
             border: 2rem solid #fff;
             border-radius: 8px;
             overflow: hidden;
+            transition: all 0.3s;
+            cursor: pointer;
 
             &::before {
                 content: "";
@@ -80,6 +76,10 @@
                 background-repeat: no-repeat;
                 background-size: 12rem;
                 background-position: center;
+            }
+
+            &:hover {
+                scale: 1.05;
             }
         }
     }

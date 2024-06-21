@@ -6,9 +6,8 @@
         <div data-barba="wrapper">
             @@include('sections/header.html', {})
             <main data-barba="container" data-barba-namespace="about">
-                <section class="about">
-                    <h1>About page</h1>
-                </section>
+                @@include('sections/about/about-hero.html') @@include('sections/about/about.html')
+                @@include('sections/action.html')
             </main>
             @@include('sections/footer.html', {})
         </div>

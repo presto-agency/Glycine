@@ -2,7 +2,7 @@ html {
     font-size: calc(100vw / 1440);
 
     @include smallDevices($sm) {
-        font-size: calc(100vw / 360);
+        // font-size: calc(100vw / 360);
     }
 }
 

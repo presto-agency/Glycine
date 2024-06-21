@@ -45,6 +45,8 @@
     },
     "dependencies": {
         "@barba/core": "^2.10.0",
+        "@splidejs/splide": "^4.1.4",
+        "animejs": "^3.2.2",
         "gsap": "^3.12.5",
         "gulp-postcss": "^10.0.0"
     }

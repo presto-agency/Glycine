@@ -1,0 +1,59 @@
+.about {
+    display: flex;
+
+    &__banner {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        width: 776rem;
+        height: 600rem;
+        padding: 56rem;
+        color: var(--color-white);
+
+        .decorative {
+            margin-bottom: 16rem;
+        }
+
+        img {
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+        }
+    }
+
+    &__desc {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex: 1;
+        padding-left: 64rem;
+        padding-right: 0;
+    }
+
+    &__subtitle {
+        position: relative;
+        padding-left: 36rem;
+        margin-bottom: 24rem;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 24rem;
+            height: 24rem;
+            background-image: url("../img/svgicons/smile.svg");
+            background-repeat: no-repeat;
+        }
+    }
+
+    &__title {
+        margin-bottom: 40rem;
+        letter-spacing: -1rem;
+    }
+
+    &__text {
+        margin-bottom: 16rem;
+    }
+}

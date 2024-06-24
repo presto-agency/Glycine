@@ -56,30 +56,27 @@
         }
         &-img {
             position: relative;
-            width: 195rem;
-            gap: 110rem;
-            border: 2rem solid #fff;
+            width: 190rem;
+            height: 110rem;
             border-radius: 8px;
-            overflow: hidden;
-            transition: all 0.3s;
+            transition: all 1s;
             cursor: pointer;
+            overflow: hidden;
 
-            &::before {
-                content: "";
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 37rem;
-                height: 100%;
-                background-color: var(--color-primary-light-green);
-                background-image: url("../img/svgicons/arrow-right.svg");
-                background-repeat: no-repeat;
-                background-size: 12rem;
-                background-position: center;
-            }
-
-            &:hover {
-                scale: 1.05;
+            .img-wrapper {
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 37rem;
+                    height: 100%;
+                    background-color: var(--color-primary-light-green);
+                    background-image: url("../img/svgicons/arrow-right.svg");
+                    background-repeat: no-repeat;
+                    background-size: 12rem;
+                    background-position: center;
+                }
             }
         }
     }

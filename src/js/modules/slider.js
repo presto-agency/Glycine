@@ -15,7 +15,7 @@ export const initHeroCarousel = () => {
             autoWidth: false,
             speed: 1000,
             easing: "linear",
-            autoplay: true,
+            autoplay: false,
             interval: 4000,
         })
 

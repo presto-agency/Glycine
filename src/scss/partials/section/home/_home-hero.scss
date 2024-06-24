@@ -1,8 +1,10 @@
 .home-hero {
+    position: relative;
     height: calc(100vh - 8rem);
     padding: 165rem 172rem 0;
     background: var(--color-black);
     text-align: center;
+    z-index: 0;
 
     &__btn {
         position: relative;
@@ -34,5 +36,10 @@
     &__subtitle {
         color: var(--color-primary-light2-green);
         font: var(--font-body-xl);
+    }
+    #lottie-animation {
+        position: absolute;
+        inset: 0;
+        z-index: -1;
     }
 }

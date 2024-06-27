@@ -1,0 +1,77 @@
+.about-shareholders {
+    &__subtitle {
+        position: relative;
+        padding-left: 36rem;
+        margin-bottom: 24rem;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 24rem;
+            height: 24rem;
+            background-image: url("../img/svgicons/shareholders-icon.svg");
+            background-repeat: no-repeat;
+        }
+    }
+
+    &__title {
+        width: 1200rem;
+        margin-bottom: 64rem;
+    }
+
+    &__card {
+        display: flex;
+
+        &-banner {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            width: 720rem;
+            height: 666rem;
+            padding: 56rem;
+            color: var(--color-white);
+
+            .decorative {
+                margin-bottom: 16rem;
+            }
+
+            img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                @include imageCover(center);
+                z-index: -1;
+            }
+        }
+
+        &-info {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            margin-right: 64rem;
+
+            p {
+                margin-bottom: 8rem;
+                color: var(--color-gray-800);
+            }
+        }
+
+        &-subtitle {
+            position: relative;
+            margin-top: 64rem;
+            margin-bottom: 32rem;
+            color: var(--color-primary-green);
+            img {
+                width: 24rem;
+                height: 24rem;
+                margin-right: 12rem;
+            }
+        }
+        &-title {
+            margin-bottom: 56rem;
+        }
+    }
+}

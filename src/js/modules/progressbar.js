@@ -1,25 +1,12 @@
-import Tween from 'gsap';
+import { gsap } from "gsap"
 
-export const startProgressBar = (progressId) => {
-	if (progressId) {
-		const follower = progressId.querySelector('.progress-bar-follower');
-		Tween.fromTo(follower,
-			{
-				width: 0,
-			},
-			{
-				width: '100%',
-				duration: 4,
-				ease: 'linear',
-			});
-	}
-}
-
-export const setProgressBar = (progressId, value) => {
-	if (progressId) {
-		const follower = progressId.querySelector('.progress-bar-follower');
-		Tween.set(follower, {
-			width: `${value * 100}%`
-		})
-	}
+export const setProgressBar = (progressBar, rate) => {
+    if (progressBar) {
+        gsap.to(progressBar, {
+            "--before-transform": `translateX(${100 - rate * 100}%)`,
+            "--after-transform": `translateX(${-(100 - rate * 100)}%)`,
+            "--height": `${rate * 100}%`,
+            duration: 0.1,
+        })
+    }
 }

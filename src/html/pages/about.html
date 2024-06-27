@@ -3,14 +3,17 @@
     @@include("components/head.html", {"title": "Glycine / About us"})
 
     <body>
+        @@include('sections/header.html', {})
         <div data-barba="wrapper">
-            @@include('sections/header.html', {})
             <main data-barba="container" data-barba-namespace="about">
                 @@include('sections/about/about-hero.html') @@include('sections/about/about.html')
+                @@include('sections/about/about-mission.html')
+                @@include('sections/about/about-benefits.html')
+                @@include('sections/about/about-shareholders.html')
                 @@include('sections/action.html')
             </main>
-            @@include('sections/footer.html', {})
         </div>
+        @@include('sections/footer.html', {})
         <script src="js/app.min.js"></script>
     </body>
 </html>

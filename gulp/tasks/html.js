@@ -12,7 +12,7 @@ export const html = () => {
                 basepath: "src/html",
             })
         )
-        .pipe(app.plugins.ifPlugin(app.isBuild, webpHtmlNoSvg()))
+        .pipe(webpHtmlNoSvg())
         .pipe(
             app.plugins.ifPlugin(
                 app.isBuild,

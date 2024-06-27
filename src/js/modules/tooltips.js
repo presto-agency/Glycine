@@ -1,10 +1,12 @@
-document.addEventListener("DOMContentLoaded", function () {
+export const initTooltips = () => {
     const tooltipTargets = document.querySelectorAll(".tooltip-target")
 
-    tooltipTargets.forEach((target) => {
-        target.addEventListener("mouseenter", showTooltip)
-        target.addEventListener("mouseleave", hideTooltip)
-    })
+    if (tooltipTargets) {
+        tooltipTargets.forEach((target) => {
+            target.addEventListener("mouseenter", showTooltip)
+            target.addEventListener("mouseleave", hideTooltip)
+        })
+    }
 
     function showTooltip(event) {
         const target = event.currentTarget
@@ -174,4 +176,4 @@ document.addEventListener("DOMContentLoaded", function () {
 
         return { top, left, position }
     }
-})
+}

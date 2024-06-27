@@ -1,45 +1,46 @@
 .border-animation {
-    &:before {
+    position: relative;
+    overflow: hidden;
+
+    &:before,
+    &:after {
         box-sizing: border-box;
-        transform: translateX(100%);
         content: "";
         position: absolute;
-        bottom: 0;
-        left: 0;
         width: 100%;
         height: 2px;
-        border-bottom: 2px solid transparent;
-        border-left: 2px solid transparent;
+        z-index: 1;
+    }
+
+    &:before {
+        transform: translateX(100%);
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        border-bottom: 3px solid var(--color-primary-green);
+        border-left: 3px solid var(--color-primary-green);
     }
 
     &:after {
-        box-sizing: border-box;
         transform: translateX(-100%);
-        content: "";
-        position: absolute;
+        height: 2px;
         top: 0;
         left: 0;
-        width: 100%;
-        height: 2px;
-        border-top: 2px solid transparent;
-        border-right: 2px solid transparent;
+        border-top: 3px solid var(--color-primary-green);
+        border-right: 3px solid var(--color-primary-green);
     }
 
-    &:hover {
-        color: inherit;
-        text-decoration: none;
-
+    &.active {
         &:before {
-            transition: 0.1s transform linear, 0.1s height linear 0.1s;
-            transform: translateX(0);
+            transform: translateX(0%);
+            transition: transform 2s linear, height 2s linear 2s;
             height: 100%;
-            border-color: var(--color-primary-green);
         }
+
         &:after {
-            transition: 0.1s transform linear 0.2s, 0.1s height linear 0.3s;
-            transform: translateX(0);
+            transform: translateX(0%);
+            transition: transform 2s linear 4s, height 2s linear 6s;
             height: 100%;
-            border-color: var(--color-primary-green);
         }
     }
 }

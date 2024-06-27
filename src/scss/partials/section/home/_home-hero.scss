@@ -1,12 +1,21 @@
 .home-hero {
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     height: calc(100vh - 8rem);
-    padding: 165rem 172rem 0;
+    padding: 165rem 172rem 40rem;
     background: var(--color-black);
     text-align: center;
     z-index: 0;
+    overflow: hidden;
 
-    &__btn {
+    &__info {
+        height: max-content;
+        transition: height 1s, opacity 3s;
+    }
+
+    &__top-btn {
         position: relative;
         font: var(--font-body-m);
         padding: 12rem 16rem 13rem 48rem;
@@ -36,10 +45,49 @@
     &__subtitle {
         color: var(--color-primary-light2-green);
         font: var(--font-body-xl);
+        margin-bottom: 64rem;
     }
+
+    &__bottom-btn {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: transparent;
+        font: var(--font-button-m);
+        color: var(--color-primary-light-green);
+
+        img {
+            width: 24rem;
+            height: 24rem;
+        }
+    }
+
     #lottie-animation {
         position: absolute;
         inset: 0;
         z-index: -1;
     }
+}
+
+.plant-container {
+    position: absolute;
+    bottom: -100rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 672rem;
+    margin-top: 20px;
+    pointer-events: none;
+    transition: bottom 1s;
+}
+.plant-wrapper {
+    height: 600rem;
+}
+.plant {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40%;
+    object-fit: contain;
+    transition: height 1s ease-in-out;
 }

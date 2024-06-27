@@ -1,0 +1,60 @@
+.about-benefits {
+    display: flex;
+    flex-direction: column;
+    padding: 144rem 56rem;
+    background: var(--color-black);
+    color: var(--color-white);
+
+    &__header {
+        margin-bottom: 64rem;
+        display: flex;
+    }
+
+    &__subtitle {
+        position: relative;
+        padding-left: 36rem;
+        margin: 9rem 238rem 0 0;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 24rem;
+            height: 24rem;
+            background-image: url("../img/svgicons/benefits-icon.svg");
+            background-repeat: no-repeat;
+        }
+    }
+
+    &__items {
+        display: flex;
+        gap: 368rem;
+
+        &.first {
+            justify-content: end;
+            margin-bottom: 80rem;
+        }
+    }
+
+    &__item {
+        width: 304rem;
+        border-top: 1rem solid var(--color-primary-green);
+
+        &-top {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8rem;
+        }
+
+        &-title {
+            color: var(--color-primary-green);
+            margin-top: 32rem;
+        }
+        &-lable {
+            font: var(--font-body-m-b);
+            color: var(--color-primary-green);
+            margin-top: 16rem;
+        }
+    }
+}

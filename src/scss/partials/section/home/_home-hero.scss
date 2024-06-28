@@ -3,6 +3,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
     height: calc(100vh - 8rem);
     padding: 165rem 172rem 40rem;
     background: var(--color-black);
@@ -11,6 +12,9 @@
     overflow: hidden;
 
     &__info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         height: max-content;
         transition: height 1s, opacity 3s;
     }
@@ -48,18 +52,25 @@
         margin-bottom: 64rem;
     }
 
-    &__bottom-btn {
+    &__start-btn,
+    &__skip-btn {
+        position: relative;
         display: flex;
         flex-direction: column;
         align-items: center;
         background: transparent;
         font: var(--font-button-m);
         color: var(--color-primary-light-green);
+        z-index: 1;
 
         img {
             width: 24rem;
             height: 24rem;
         }
+    }
+    &__skip-btn {
+        opacity: 0;
+        transition: opacity 3s;
     }
 
     #lottie-animation {
@@ -69,25 +80,26 @@
     }
 }
 
-.plant-container {
-    position: absolute;
-    bottom: -100rem;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 672rem;
-    margin-top: 20px;
-    pointer-events: none;
-    transition: bottom 1s;
-}
-.plant-wrapper {
-    height: 600rem;
-}
 .plant {
     position: absolute;
-    bottom: 0;
+    bottom: -100rem;
     left: 0;
     width: 100%;
     height: 40%;
     object-fit: contain;
-    transition: height 1s ease-in-out;
+    transition: all 1s ease-in-out;
+
+    &-container {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 672rem;
+        margin-top: 20px;
+        pointer-events: none;
+    }
+
+    &-wrapper {
+        height: 620rem;
+    }
 }

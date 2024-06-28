@@ -1,0 +1,12 @@
+.blogs-hero {
+    position: relative;
+    height: calc(100vh - 8rem);
+    padding-top: 165rem;
+    text-align: center;
+
+    &__title {
+        margin-bottom: 32rem;
+        color: var(--color-primary-light2-green);
+        letter-spacing: -3rem;
+    }
+}

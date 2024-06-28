@@ -1,7 +1,7 @@
 .footer {
     display: flex;
-    height: 524rem;
-    padding: 48rem 56rem 24rem;
+    height: 540rem;
+    padding: 56rem 56rem 32rem;
     background: var(--color-gray-200);
 
     &__left-side,
@@ -16,6 +16,9 @@
         width: 135rem;
         height: 36rem;
         margin-bottom: 40rem;
+        img {
+            object-fit: cover;
+        }
     }
 
     &__nav {

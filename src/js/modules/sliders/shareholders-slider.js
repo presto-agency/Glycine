@@ -12,10 +12,10 @@ export const initShareholdersSlider = () => {
             pagination: false,
             arrows: false,
             autoWidth: false,
-            speed: 500,
+            speed: 1000,
             easing: "linear",
             autoplay: true,
-            interval: 1000,
+            interval: 4000,
         })
 
         splide.mount()

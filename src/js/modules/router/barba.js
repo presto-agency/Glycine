@@ -2,7 +2,7 @@ import barba from "@barba/core"
 import gsap from "gsap"
 
 import { initHover } from "../buttons/initHover.js"
-import { initHeroSlider } from "../sliders/hero-slider.js"
+import { growingPlant } from "../animation/growing-plant.js"
 import { initHomeSlider } from "../sliders/home-slider.js"
 import { initShareholdersSlider } from "../sliders/shareholders-slider.js"
 import { textLoading } from "../animation/text-loading.js"
@@ -42,7 +42,7 @@ barba.init({
 
 barba.hooks.afterEnter(() => {
     initHover()
-    initHeroSlider()
+    growingPlant()
     initHomeSlider()
     initShareholdersSlider()
     textLoading()

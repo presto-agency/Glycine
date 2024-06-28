@@ -8,6 +8,7 @@
         justify-content: space-between;
         padding: 80rem 56rem 64rem;
         height: 778rem;
+        max-height: 100vh;
         color: var(--color-white);
 
         &-banner {
@@ -18,6 +19,7 @@
 
         &-title {
             width: 1088rem;
+            letter-spacing: -3rem;
         }
 
         &-pagination {

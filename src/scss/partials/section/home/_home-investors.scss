@@ -1,6 +1,8 @@
 .home-investors {
     display: flex;
     height: 690rem;
+    max-height: 100vh;
+    padding: 0;
 
     img {
         position: absolute;

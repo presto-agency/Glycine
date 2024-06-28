@@ -1,20 +1,8 @@
 import Splide from "@splidejs/splide"
-// import { gsap } from "gsap"
 
 export const initHomeSlider = () => {
     const slider = document.querySelector("#home-slider")
-    // const progressBar = document.querySelector("#progress-bar")
     const animationBorders = document.querySelectorAll(".border-animation")
-
-    // const setProgressBar = (rate) => {
-    //     if (progressBar) {
-    //         gsap.to(progressBar, {
-    //             "--before-transform": `translateX(0%)`,
-    //             "--after-transform": `translateX(0%)`,
-    //             "--height": `100%`,
-    //         })
-    //     }
-    // }
 
     const startAnimation = () => {
         animationBorders.forEach((border) => {
@@ -34,6 +22,7 @@ export const initHomeSlider = () => {
             pagination: false,
             arrows: false,
             autoWidth: false,
+            pauseOnHover: false,
             speed: 1000,
             easing: "linear",
             autoplay: true,
@@ -52,9 +41,5 @@ export const initHomeSlider = () => {
         splide.on("moved", () => {
             startAnimation()
         })
-
-        // splide.on("autoplay:playing", function (rate) {
-        //     setProgressBar(rate)
-        // })
     }
 }

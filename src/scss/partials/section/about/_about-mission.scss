@@ -20,6 +20,10 @@
         }
     }
 
+    &__title {
+        letter-spacing: -1rem;
+    }
+
     &__cards {
         display: flex;
         gap: 32rem;

@@ -5,7 +5,7 @@
     background: var(--color-primary-light-green);
     color: var(--color-black) !important;
     font: var(--button-m);
-    padding: 16rem 24rem;
+    padding: 12rem 16rem;
     border-radius: 8px;
     position: relative;
     overflow: hidden;
@@ -62,6 +62,10 @@
         .btn__bg {
             background-color: var(--color-gray-300);
         }
+    }
+    &.big {
+        padding: 18rem 28rem;
+        font: var(--font-body-l);
     }
 }
 

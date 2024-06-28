@@ -17,6 +17,9 @@
         display: inline-block;
         width: 135rem;
         height: 36rem;
+        img {
+            object-fit: cover;
+        }
     }
 
     &__nav {

@@ -10,7 +10,6 @@
 -   **[Requirements](#requirements)**
 -   **[Installation](#installation)**
 -   **[Getting Started](#getting-started)**
--   **[Configuration](#configuration)**
 
 <h2 id="introduction">Introduction</h2>
 
@@ -49,7 +48,3 @@ npm run build
 # or
 yarn build
 ```
-
-<h2 id="configuration">Configuration</h2>
-
-/docs is compiled folder

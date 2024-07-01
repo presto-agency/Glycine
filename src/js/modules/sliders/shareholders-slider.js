@@ -12,6 +12,7 @@ export const initShareholdersSlider = () => {
             pagination: false,
             arrows: false,
             autoWidth: false,
+            pauseOnHover: false,
             speed: 1000,
             easing: "linear",
             autoplay: true,

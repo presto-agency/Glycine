@@ -4,7 +4,7 @@ import { gsap } from "gsap"
 import { ScrollToPlugin } from "gsap/ScrollToPlugin.js"
 gsap.registerPlugin(ScrollToPlugin)
 
-export const growingPlant = () => {
+export const growingPlant = (next) => {
     const animateSection = document.querySelector(".home-hero")
     const sliderElement = document.querySelector("#hero-slider")
     const growButton = document.getElementById("growButton")
@@ -12,6 +12,11 @@ export const growingPlant = () => {
     const skipBtn = document.querySelector(".home-hero__skip-btn")
     const plants = document.querySelectorAll(".plant")
     const nextSection = document.querySelector(".home-advantages")
+
+    const isHomePage = next.namespace === "home"
+    if (!isHomePage) {
+        lenis.start()
+    }
 
     if (sliderElement && growButton && infoBlock && plants.length > 0) {
         const splide = new Splide(sliderElement, {
@@ -47,19 +52,22 @@ export const growingPlant = () => {
             if (animationDone) {
                 return
             }
+            if (isElementInViewport(animateSection)) {
+                animationDone = true
 
-            animationDone = true
-
-            splide.Components.Autoplay.play()
-            infoBlock.style.opacity = "0"
-            skipBtn.style.opacity = "1"
-            plants.forEach((plant) => {
-                plant.style.bottom = "0"
-                plant.style.height = "100%"
-            })
-            timeout = setTimeout(() => {
-                smoothScrollTo(nextSection)
-            }, 10000)
+                splide.Components.Autoplay.play()
+                infoBlock.style.opacity = "0"
+                skipBtn.style.opacity = "1"
+                plants.forEach((plant) => {
+                    plant.style.bottom = "0"
+                    plant.style.height = "100%"
+                })
+                timeout = setTimeout(() => {
+                    smoothScrollTo(nextSection)
+                }, 10000)
+            } else {
+                lenis.start()
+            }
         }
 
         const isElementInViewport = (element) => {
@@ -72,27 +80,16 @@ export const growingPlant = () => {
             )
         }
 
-        window.addEventListener("wheel", () => {
-            if (isElementInViewport(animateSection)) {
-                growAnimation()
-            } else {
-                lenis.start()
-            }
-        })
+        window.addEventListener("wheel", growAnimation)
 
-        window.addEventListener("touchstart", () => {
-            if (isElementInViewport(animateSection)) {
-                growAnimation()
-            } else {
-                lenis.start()
-            }
-        })
+        window.addEventListener("touchstart", growAnimation)
 
         growButton.addEventListener("click", () => {
             growAnimation()
         })
 
         skipBtn.addEventListener("click", () => {
+            console.log(timeout)
             clearTimeout(timeout)
 
             smoothScrollTo(nextSection)

@@ -10,12 +10,13 @@ import { parallax } from "../parallax.js"
 import { lottieAnimations } from "../animation/lottie.js"
 import { initLenisScroll } from "../scroll.js"
 import { initTooltips } from "../tooltips.js"
-import { initCarousel } from "../carousel.js"
+import { initCarousel } from "../carousels/carousel.js"
 
 barba.init({
     transitions: [
         {
             name: "general",
+
             once: ({ next }) => {
                 return gsap.from(next.container, {
                     opacity: 0,
@@ -40,15 +41,15 @@ barba.init({
     ],
 })
 
-barba.hooks.afterEnter(() => {
+barba.hooks.afterEnter(({ next }) => {
+    initLenisScroll()
+    growingPlant(next)
     initHover()
-    growingPlant()
     initHomeSlider()
     initShareholdersSlider()
     textLoading()
     parallax()
     lottieAnimations()
-    initLenisScroll()
     initTooltips()
     initCarousel()
 })

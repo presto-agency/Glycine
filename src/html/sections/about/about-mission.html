@@ -1,20 +1,24 @@
 <section class="section about-mission">
     <div class="about-mission__header">
-        <p class="about-mission__subtitle">Our mission and values</p>
-        <h2 class="h2 about-mission__title" animated-text>
+        @@include("components/section-subtitle.html", {"text" : "Our mission and values",
+        "iconName": "mission-icon"})
+
+        <h2 class="h2 about-mission__title" text-highlight-on-scrol>
             Our mission is to change the way agribusiness is done across the continent, increasing
             food security and investor income
         </h2>
     </div>
     <div class="about-mission__cards">
-        <div class="carousel splide">
+        <div class="splide" id="about-mission__carousel">
             <div class="splide__track">
                 <div class="splide__list">
                     <div class="splide__slide">
                         <div class="about-mission__card">
-                            <div class="about-mission__card-lables">
-                                <img src="img/svgicons/plant.svg" alt="" />
-                                <span>Progress</span>
+                            <div class="about-mission__card-top">
+                                <div class="about-mission__card-icon">
+                                    <img src="img/svgicons/plant.svg" alt="Progress icon" />
+                                </div>
+                                <span class="about-mission__card-lable">Progress</span>
                             </div>
                             <p class="about-mission__card-desc">
                                 Bringing progress to new lands and new people
@@ -23,9 +27,14 @@
                     </div>
                     <div class="splide__slide">
                         <div class="about-mission__card">
-                            <div class="about-mission__card-lables">
-                                <img src="img/svgicons/investments.svg" alt="" />
-                                <span>Investments</span>
+                            <div class="about-mission__card-top">
+                                <div class="about-mission__card-icon">
+                                    <img
+                                        src="img/svgicons/investments.svg"
+                                        alt="Investments icon"
+                                    />
+                                </div>
+                                <span class="about-mission__card-lable">Investments</span>
                             </div>
                             <p class="about-mission__card-desc">
                                 Being constantly profitable for those who trusts us with their
@@ -35,9 +44,14 @@
                     </div>
                     <div class="splide__slide">
                         <div class="about-mission__card">
-                            <div class="about-mission__card-lables">
-                                <img src="img/svgicons/innovations.svg" alt="" />
-                                <span>Innovations</span>
+                            <div class="about-mission__card-top">
+                                <div class="about-mission__card-icon">
+                                    <img
+                                        src="img/svgicons/innovations.svg"
+                                        alt="Innovations icon"
+                                    />
+                                </div>
+                                <span class="about-mission__card-lable">Innovations</span>
                             </div>
                             <p class="about-mission__card-desc">
                                 Creating new opportunities for the people by innovations and
@@ -47,9 +61,11 @@
                     </div>
                     <div class="splide__slide">
                         <div class="about-mission__card">
-                            <div class="about-mission__card-lables">
-                                <img src="img/svgicons/plant.svg" alt="" />
-                                <span>Progress</span>
+                            <div class="about-mission__card-top">
+                                <div class="about-mission__card-icon">
+                                    <img src="img/svgicons/plant.svg" alt="Progress icon" />
+                                </div>
+                                <span class="about-mission__card-lable">Progress</span>
                             </div>
                             <p class="about-mission__card-desc">
                                 Bringing progress to new lands and new people

@@ -1,15 +1,18 @@
 .home-hero {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    height: calc(100vh - 8rem);
-    padding: 165rem 172rem 40rem;
-    background: var(--color-black);
-    text-align: center;
-    z-index: 0;
-    overflow: hidden;
+    height: calc(500vh);
+
+    &__wrapper {
+        position: sticky;
+        top: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: calc(100vh - 8rem);
+        background: var(--color-black);
+        text-align: center;
+        z-index: 0;
+        overflow: hidden;
+    }
 
     &__info {
         display: flex;
@@ -31,7 +34,7 @@
         &::before {
             content: "";
             position: absolute;
-            top: 12rem;
+            top: 14rem;
             left: 16rem;
             width: 24rem;
             height: 24rem;
@@ -49,12 +52,11 @@
     &__subtitle {
         color: var(--color-primary-light2-green);
         font: var(--font-body-xl);
-        margin-bottom: 64rem;
     }
 
-    &__start-btn,
     &__skip-btn {
-        position: relative;
+        position: absolute;
+        bottom: 15vh;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -63,17 +65,13 @@
         color: var(--color-primary-light-green);
         z-index: 1;
 
-        img {
+        &-icon {
             width: 24rem;
             height: 24rem;
         }
     }
-    &__skip-btn {
-        opacity: 0;
-        transition: opacity 3s;
-    }
 
-    #lottie-animation {
+    #home-hero-lottie {
         position: absolute;
         inset: 0;
         z-index: -1;
@@ -81,25 +79,21 @@
 }
 
 .plant {
-    position: absolute;
-    bottom: -100rem;
-    left: 0;
-    width: 100%;
-    height: 40%;
-    object-fit: contain;
-    transition: all 1s ease-in-out;
-
     &-container {
         position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 672rem;
-        margin-top: 20px;
+        inset: 0;
         pointer-events: none;
     }
-
     &-wrapper {
-        height: 620rem;
+        height: 100vh;
+    }
+    &-frame {
+        position: absolute;
+        bottom: -100rem;
+        left: 0;
+        width: 100%;
+        height: 40%;
+        object-fit: contain;
+        transition: all 1s ease-in-out;
     }
 }

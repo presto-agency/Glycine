@@ -16,7 +16,7 @@
             margin-bottom: 16rem;
         }
 
-        img {
+        &-img {
             position: absolute;
             inset: 0;
             z-index: -1;
@@ -30,23 +30,6 @@
         flex: 1;
         padding-left: 64rem;
         padding-right: 0;
-    }
-
-    &__subtitle {
-        position: relative;
-        padding-left: 36rem;
-        margin-bottom: 24rem;
-
-        &::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 24rem;
-            height: 24rem;
-            background-image: url("../img/svgicons/smile.svg");
-            background-repeat: no-repeat;
-        }
     }
 
     &__title {

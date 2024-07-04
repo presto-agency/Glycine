@@ -1,41 +1,32 @@
 import lottie from "lottie-web"
 
+const loadLottieAnimation = (containerId, path) => {
+    const container = document.getElementById(containerId)
+    if (!container) {
+        console.warn(`Container with ID "${containerId}" not found.`)
+        return null
+    }
+
+    return lottie.loadAnimation({
+        container,
+        renderer: "svg",
+        loop: true,
+        autoplay: true,
+        path,
+    })
+}
+
 export const lottieAnimations = () => {
-    const animationContainer = document.getElementById("lottie-animation")
+    const animations = [
+        { id: "home-hero-lottie", path: "../files/Hero.json" },
+        { id: "beans-lottie", path: "../files/CTA-1.json" },
+        { id: "leafs-lottie", path: "../files/CTA-2.json" },
+    ]
 
-    const animationData = {
-        container: animationContainer,
-        renderer: "svg",
-        loop: true,
-        autoplay: true,
-        path: "../files/Hero.json",
-    }
-
-    const animationContainer1 = document.getElementById("lottie-animation-1")
-
-    const animationData1 = {
-        container: animationContainer1,
-        renderer: "svg",
-        loop: true,
-        autoplay: true,
-        path: "../files/CTA-1.json",
-    }
-
-    const animationContainer2 = document.getElementById("lottie-animation-2")
-
-    const animationData2 = {
-        container: animationContainer2,
-        renderer: "svg",
-        loop: true,
-        autoplay: true,
-        path: "../files/CTA-2.json",
-    }
-
-    const anim = lottie.loadAnimation(animationData)
-    const anim1 = lottie.loadAnimation(animationData1)
-    const anim2 = lottie.loadAnimation(animationData2)
-
-    anim.play()
-    anim1.play()
-    anim2.play()
+    animations.forEach(({ id, path }) => {
+        const animation = loadLottieAnimation(id, path)
+        if (animation) {
+            animation.play()
+        }
+    })
 }

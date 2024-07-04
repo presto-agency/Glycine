@@ -13,12 +13,10 @@
     }
 
     &__logo {
+        display: inline-block;
         width: 135rem;
         height: 36rem;
         margin-bottom: 40rem;
-        img {
-            object-fit: cover;
-        }
     }
 
     &__nav {
@@ -101,11 +99,12 @@
         }
     }
 
-    &__social-icons {
-        display: flex;
-        gap: 16rem;
-
-        img {
+    &__social {
+        &-items {
+            display: flex;
+            gap: 16rem;
+        }
+        &-icon {
             width: 24rem;
             height: 24rem;
             cursor: pointer;

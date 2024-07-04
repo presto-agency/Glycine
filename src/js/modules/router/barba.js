@@ -3,14 +3,15 @@ import gsap from "gsap"
 
 import { initHover } from "../buttons/initHover.js"
 import { growingPlant } from "../animation/growing-plant.js"
-import { initHomeSlider } from "../sliders/home-slider.js"
-import { initShareholdersSlider } from "../sliders/shareholders-slider.js"
-import { textLoading } from "../animation/text-loading.js"
 import { parallax } from "../parallax.js"
 import { lottieAnimations } from "../animation/lottie.js"
 import { initLenisScroll } from "../scroll.js"
 import { initTooltips } from "../tooltips.js"
-import { initCarousel } from "../carousels/carousel.js"
+import { initHomeCarousel } from "../carousels/home-carousel.js"
+import { initShareholdersCarousel } from "../carousels/about-shareholders.js"
+import { initMissionCarousel } from "../carousels/about-mission.js"
+import { textHighlight } from "../animation/text-highlight.js"
+import { languageSelect } from "../languageSelect.js"
 
 barba.init({
     transitions: [
@@ -42,14 +43,15 @@ barba.init({
 })
 
 barba.hooks.afterEnter(({ next }) => {
+    languageSelect()
     initLenisScroll()
     growingPlant(next)
     initHover()
-    initHomeSlider()
-    initShareholdersSlider()
-    textLoading()
+    textHighlight()
     parallax()
     lottieAnimations()
     initTooltips()
-    initCarousel()
+    initHomeCarousel()
+    initShareholdersCarousel()
+    initMissionCarousel()
 })

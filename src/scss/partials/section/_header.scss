@@ -8,18 +8,16 @@
     align-items: center;
     justify-content: space-between;
     padding: 16rem;
+    border: 1rem solid #113036;
     border-radius: 8px;
     background: var(--color-black);
     color: var(--color-white);
     z-index: 10;
 
-    .logo {
+    &__logo {
         display: inline-block;
         width: 135rem;
         height: 36rem;
-        img {
-            object-fit: cover;
-        }
     }
 
     &__nav {
@@ -33,19 +31,8 @@
         align-items: center;
     }
 
-    .custom-select {
-        position: relative;
-        width: 41rem;
-        height: 21rem;
-        margin-right: 32rem;
-    }
-
-    .custom-select select {
-        display: block;
-        width: 100%;
-        font: var(--button-m);
-        background-color: transparent;
-        color: #fff;
-        cursor: pointer;
+    &.sticky {
+        position: fixed;
+        top: 0;
     }
 }

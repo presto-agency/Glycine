@@ -7,25 +7,8 @@
         display: flex;
     }
 
-    &__subtitle {
-        position: relative;
-        padding-left: 36rem;
-        margin: 13rem 186rem 0 0;
-        white-space: nowrap;
-
-        &::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 24rem;
-            height: 24rem;
-            background-image: url("../img/svgicons/techinovation-icon.svg");
-            background-repeat: no-repeat;
-        }
-    }
-
     &__title {
+        margin-left: 186rem;
         width: 700rem;
     }
 
@@ -42,36 +25,43 @@
         width: 416rem;
         height: 368rem;
         padding: 32rem;
-        color: var(--color-white);
+        color: var(--color-black);
         border: 1rem solid var(--color-gray-300);
+        overflow: hidden;
 
-        &.black {
-            color: var(--color-black);
+        &:hover {
+            color: var(--color-white);
         }
-
-        &.bg-gray {
-            background: var(--color-gray-300);
+        &:hover .btn-arrow__icon-box {
+            background: var(--color-white);
         }
-
-        img {
+        &::before {
+            content: "";
             position: absolute;
             top: 0;
             left: 0;
-            @include imageContain(center);
-            z-index: -1;
+            width: 100%;
+            height: 100%;
+            background-image: url("../img/pages/home/blog.jpg");
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            z-index: 1;
         }
 
-        &-lables {
-            display: flex;
-            justify-content: space-between;
-            font: var(--font-body-s);
-
-            img {
-                width: 48rem;
-                height: 48rem;
-            }
+        &:hover::before {
+            opacity: 1;
+        }
+        > * {
+            position: relative;
+            z-index: 2;
         }
 
+        &.bg-gray {
+            background-color: var(--color-gray-300);
+        }
         &-title {
             margin-bottom: 8rem;
             font: var(--font-body-xl);

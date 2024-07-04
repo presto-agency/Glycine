@@ -10,21 +10,8 @@
         display: flex;
     }
 
-    &__subtitle {
-        position: relative;
-        padding-left: 36rem;
-        margin: 9rem 238rem 0 0;
-
-        &::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 24rem;
-            height: 24rem;
-            background-image: url("../img/svgicons/benefits-icon.svg");
-            background-repeat: no-repeat;
-        }
+    &__title {
+        margin-left: 238rem;
     }
 
     &__items {

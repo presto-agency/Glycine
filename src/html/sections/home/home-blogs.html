@@ -1,12 +1,12 @@
 <section class="section home-blogs">
     <div class="home-blogs__header">
-        <p class="home-blogs__subtitle">Blog and News</p>
+        @@include("components/section-subtitle.html", {"text" : "Blog and News", "iconName":
+        "blogs-icon"})
         <h2 class="h2 home-blogs__title">Explore Our Latest news and articles</h2>
     </div>
     <div class="home-blogs__cards">
         <div class="home-blogs__card">
             <div>
-                <img src="img/pages/home/blog.jpg" alt="" />
                 <p class="home-blogs__card-title">
                     Harnessing Africa's Agricultural Strength: Soy Protein as a Pillar of Food
                     Security
@@ -14,11 +14,10 @@
             </div>
             <div class="home-blogs__card-info">
                 <div class="home-blogs__card-date">June 10, 2024</div>
-                @@include("components/buttons/arrow-btn.html", {"white": "white",
-                "withoutText":"withoutText"})
+                @@include("components/buttons/arrow-btn.html", {"withoutText":"withoutText"})
             </div>
         </div>
-        <div class="home-blogs__card black">
+        <div class="home-blogs__card">
             <p class="home-blogs__card-title">
                 Africa's Soy Protein Boom: Unleashing the Power of the Emerging Breadbasket
             </p>

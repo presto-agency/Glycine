@@ -1,7 +1,7 @@
 import Splide from "@splidejs/splide"
 
-export const initHomeSlider = () => {
-    const slider = document.querySelector("#home-slider")
+export const initHomeCarousel = () => {
+    const carousel = document.querySelector("#home-carousel")
     const animationBorders = document.querySelectorAll(".border-animation")
 
     const startAnimation = () => {
@@ -13,8 +13,8 @@ export const initHomeSlider = () => {
         })
     }
 
-    if (slider) {
-        const splide = new Splide(slider, {
+    if (carousel) {
+        const splide = new Splide(carousel, {
             type: "fade",
             rewind: true,
             drag: true,
@@ -32,7 +32,7 @@ export const initHomeSlider = () => {
         splide.mount()
         startAnimation()
 
-        document.querySelectorAll(".home-slider__info-img").forEach((img) => {
+        document.querySelectorAll(".home-carousel__info-img").forEach((img) => {
             img.addEventListener("click", () => {
                 splide.go("+1")
             })

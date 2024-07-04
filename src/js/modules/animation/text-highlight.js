@@ -1,8 +1,8 @@
-import gsap from "gsap"
+import GSAP, { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger.js"
 
-export const textLoading = () => {
-    const textContainers = document.querySelectorAll("[animated-text]")
+export const textHighlight = () => {
+    const textContainers = document.querySelectorAll("[text-highlight-on-scrol]")
 
     textContainers.forEach((textContainer) => {
         const text = textContainer.textContent.trim()
@@ -12,7 +12,7 @@ export const textLoading = () => {
 
         gsap.registerPlugin(ScrollTrigger)
 
-        gsap.to(".word", {
+        GSAP.to(".word", {
             scrollTrigger: {
                 trigger: textContainer,
                 start: "top 80%",
@@ -23,7 +23,7 @@ export const textLoading = () => {
             opacity: 1,
             stagger: 0.1,
             ease: "power1.inOut",
-            duration: 0.5,
+            duration: 0.7,
         })
     })
 }

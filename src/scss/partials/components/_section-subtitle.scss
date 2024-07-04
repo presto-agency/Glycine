@@ -1,0 +1,13 @@
+.subtitle {
+    display: flex;
+    margin: 12rem 0 24rem;
+
+    &-text {
+        padding-left: 12rem;
+    }
+
+    &-icon {
+        width: 24rem;
+        height: 24rem;
+    }
+}

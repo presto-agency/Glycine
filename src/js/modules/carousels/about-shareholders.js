@@ -1,10 +1,10 @@
 import Splide from "@splidejs/splide"
 
-export const initShareholdersSlider = () => {
-    const slider = document.querySelector("#shareholders-slider")
+export const initShareholdersCarousel = () => {
+    const carousel = document.querySelector("#about-shareholders__carousel")
 
-    if (slider) {
-        const splide = new Splide(slider, {
+    if (carousel) {
+        const splide = new Splide(carousel, {
             type: "fade",
             rewind: true,
             drag: true,

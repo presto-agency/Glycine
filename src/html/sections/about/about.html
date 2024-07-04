@@ -1,11 +1,14 @@
 <section class="section about">
     <div class="about__banner">
-        <img src="img/pages/about/about-bg.jpg" alt="" data-parallax />
+        <div class="about__banner-img">
+            <img src="img/pages/about/about-bg.jpg" alt="background image" data-parallax />
+        </div>
         <span class="decorative">23k+</span>
-        <span>Fields sown with soybeans</span>
+        <span class="about__banner-text">Fields sown with soybeans</span>
     </div>
     <div class="about__desc">
-        <p class="about__subtitle">About Us</p>
+        @@include("components/section-subtitle.html", {"text" : "About Us", "iconName": "smile"})
+
         <h2 class="h4 about__title">
             Glycine Max Group specializes in high-tech cultivation of soybeans and durum wheat, as
             well as the production of soy-based processed products.

@@ -1,0 +1,46 @@
+.language-select-container {
+    position: relative;
+    width: 41rem;
+    height: 21rem;
+    margin-right: 32rem;
+    font: var(--button-m);
+}
+
+.select-selected {
+    background-color: transparent;
+    color: #fff;
+    cursor: pointer;
+
+    &::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 50%;
+        width: 16rem;
+        height: 16rem;
+        transform: translateY(-50%);
+        background-image: url("../img/svgicons/arrow-down.svg");
+    }
+
+    // &.active + .select-items {
+    //     display: block;
+    // }
+}
+
+.select-items {
+    display: none;
+    position: absolute;
+    background-color: transparent;
+    color: #fff;
+    width: 100%;
+    z-index: 99;
+
+    div {
+        padding: 10px;
+        cursor: pointer;
+
+        &:hover {
+            background-color: #f1f1f1;
+        }
+    }
+}

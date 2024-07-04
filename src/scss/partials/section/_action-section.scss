@@ -1,4 +1,4 @@
-.home-action {
+.action-section {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -22,14 +22,16 @@
         margin-bottom: 32rem;
     }
 
-    #lottie-animation-1 {
+    #beans-lottie,
+    #leafs-lottie {
         position: absolute;
         top: 0;
+        height: 100%;
+    }
+    #beans-lottie {
         left: 0;
     }
-    #lottie-animation-2 {
-        position: absolute;
-        top: 0;
+    #leafs-lottie {
         right: 0;
     }
 }

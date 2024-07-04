@@ -1,24 +1,19 @@
 import Splide from "@splidejs/splide"
 import { lenis } from "../scroll.js"
-import { gsap } from "gsap"
+import GSAP, { gsap } from "gsap"
 import { ScrollToPlugin } from "gsap/ScrollToPlugin.js"
 gsap.registerPlugin(ScrollToPlugin)
 
 export const growingPlant = (next) => {
     const animateSection = document.querySelector(".home-hero")
     const sliderElement = document.querySelector("#hero-slider")
-    const growButton = document.getElementById("growButton")
     const infoBlock = document.querySelector(".home-hero__info")
     const skipBtn = document.querySelector(".home-hero__skip-btn")
-    const plants = document.querySelectorAll(".plant")
+    const plants = document.querySelectorAll(".plant-frame")
     const nextSection = document.querySelector(".home-advantages")
+    const header = document.getElementById("header")
 
-    const isHomePage = next.namespace === "home"
-    if (!isHomePage) {
-        lenis.start()
-    }
-
-    if (sliderElement && growButton && infoBlock && plants.length > 0) {
+    if (sliderElement && skipBtn && infoBlock && plants.length > 0) {
         const splide = new Splide(sliderElement, {
             type: "fade",
             rewind: false,
@@ -33,65 +28,54 @@ export const growingPlant = (next) => {
         })
 
         splide.mount()
-        lenis.stop()
+        let scrollTriggerCount = 1
+
+        lenis.on("scroll", function ({ direction }) {
+            const rect = animateSection.getBoundingClientRect()
+            const triggerOffset = rect.height / 6
+            const currentTrigger = -scrollTriggerCount * triggerOffset
+            growAnimation()
+
+            if (direction > 0 && rect.top <= currentTrigger) {
+                splide.go("+1")
+                scrollTriggerCount++
+            } else if (direction < 0 && rect.top > currentTrigger - triggerOffset) {
+                splide.go("-1")
+                scrollTriggerCount--
+            }
+
+            if (rect.top <= 0 && rect.bottom > rect.height / 4) {
+                header.classList.add("sticky")
+            } else {
+                header.classList.remove("sticky")
+            }
+        })
 
         let animationDone = false
-        let timeout
 
         const smoothScrollTo = (element) => {
-            gsap.to(window, {
+            GSAP.to(window, {
                 duration: 1,
                 scrollTo: { y: element.offsetTop - 100 },
-                onComplete: () => {
-                    lenis.start()
-                },
             })
         }
 
-        const growAnimation = () => {
+        function growAnimation() {
             if (animationDone) {
                 return
-            }
-            if (isElementInViewport(animateSection)) {
+            } else {
                 animationDone = true
 
-                splide.Components.Autoplay.play()
                 infoBlock.style.opacity = "0"
                 skipBtn.style.opacity = "1"
                 plants.forEach((plant) => {
                     plant.style.bottom = "0"
-                    plant.style.height = "100%"
+                    plant.style.height = "90%"
                 })
-                timeout = setTimeout(() => {
-                    smoothScrollTo(nextSection)
-                }, 10000)
-            } else {
-                lenis.start()
             }
         }
 
-        const isElementInViewport = (element) => {
-            const rect = element.getBoundingClientRect()
-            return (
-                rect.top >= 0 &&
-                rect.left >= 0 &&
-                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-            )
-        }
-
-        window.addEventListener("wheel", growAnimation)
-
-        window.addEventListener("touchstart", growAnimation)
-
-        growButton.addEventListener("click", () => {
-            growAnimation()
-        })
-
         skipBtn.addEventListener("click", () => {
-            console.log(timeout)
-            clearTimeout(timeout)
-
             smoothScrollTo(nextSection)
         })
     }

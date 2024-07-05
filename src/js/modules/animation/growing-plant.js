@@ -4,7 +4,7 @@ import GSAP, { gsap } from "gsap"
 import { ScrollToPlugin } from "gsap/ScrollToPlugin.js"
 gsap.registerPlugin(ScrollToPlugin)
 
-export const growingPlant = (next) => {
+export const growingPlant = () => {
     const animateSection = document.querySelector(".home-hero")
     const sliderElement = document.querySelector("#hero-slider")
     const infoBlock = document.querySelector(".home-hero__info")
@@ -30,11 +30,18 @@ export const growingPlant = (next) => {
         splide.mount()
         let scrollTriggerCount = 1
 
+        let rect = animateSection.getBoundingClientRect()
+        if (rect.top <= 0 && rect.bottom > rect.height / 4) {
+            header.classList.add("sticky")
+        } else {
+            header.classList.remove("sticky")
+        }
         lenis.on("scroll", function ({ direction }) {
-            const rect = animateSection.getBoundingClientRect()
+            growAnimation()
+
+            rect = animateSection.getBoundingClientRect()
             const triggerOffset = rect.height / 6
             const currentTrigger = -scrollTriggerCount * triggerOffset
-            growAnimation()
 
             if (direction > 0 && rect.top <= currentTrigger) {
                 splide.go("+1")
@@ -66,8 +73,11 @@ export const growingPlant = (next) => {
             } else {
                 animationDone = true
 
+                GSAP.to(skipBtn, {
+                    duration: 0.5,
+                    bottom: "5vh",
+                })
                 infoBlock.style.opacity = "0"
-                skipBtn.style.opacity = "1"
                 plants.forEach((plant) => {
                     plant.style.bottom = "0"
                     plant.style.height = "90%"

@@ -4,17 +4,6 @@
 
     &__header {
         margin-bottom: 64rem;
-        display: flex;
-    }
-
-    &__title {
-        margin-left: 186rem;
-        width: 700rem;
-    }
-
-    &__cards {
-        display: flex;
-        gap: 32rem;
     }
 
     &__card {
@@ -22,7 +11,6 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        width: 416rem;
         height: 368rem;
         padding: 32rem;
         color: var(--color-black);

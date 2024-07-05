@@ -13,6 +13,7 @@
     background: var(--color-black);
     color: var(--color-white);
     z-index: 10;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 
     &__logo {
         display: inline-block;
@@ -34,5 +35,12 @@
     &.sticky {
         position: fixed;
         top: 0;
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    &.hidden {
+        transform: translateY(-100%);
+        opacity: 0;
     }
 }

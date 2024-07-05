@@ -31,18 +31,13 @@
                 color: var(--color-gray-600);
             }
         }
-
-        &-info {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 32rem;
-        }
     }
 
     &__info {
         &-wrapper {
             display: flex;
             gap: 16rem;
+            width: 224rem;
         }
         &-icon {
             width: 32rem;
@@ -51,16 +46,13 @@
         }
         &-text {
             position: relative;
-            width: 224rem;
             font: var(--font-body-s);
         }
         &-desc {
-            width: 640rem;
             font: var(--font-body-l);
         }
         &-img {
             position: relative;
-            width: 190rem;
             height: 110rem;
             border-radius: 8px;
             transition: all 1s;

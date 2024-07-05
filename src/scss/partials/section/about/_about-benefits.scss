@@ -7,18 +7,13 @@
 
     &__header {
         margin-bottom: 64rem;
-        display: flex;
-    }
-
-    &__title {
-        margin-left: 238rem;
     }
 
     &__items {
         display: flex;
         gap: 368rem;
 
-        &.first {
+        &:nth-child(2) {
             justify-content: end;
             margin-bottom: 80rem;
         }

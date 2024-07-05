@@ -7,9 +7,9 @@
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
-        width: 776rem;
         height: 600rem;
         padding: 56rem;
+        margin-right: 32rem;
         color: var(--color-white);
 
         .decorative {
@@ -27,9 +27,7 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        flex: 1;
-        padding-left: 64rem;
-        padding-right: 0;
+        height: 100%;
     }
 
     &__title {

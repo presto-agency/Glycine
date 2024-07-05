@@ -5,7 +5,7 @@ import { initHover } from "../buttons/initHover.js"
 import { growingPlant } from "../animation/growing-plant.js"
 import { parallax } from "../parallax.js"
 import { lottieAnimations } from "../animation/lottie.js"
-import { initLenisScroll } from "../scroll.js"
+import { initLenisScroll, lenis } from "../scroll.js"
 import { initTooltips } from "../tooltips.js"
 import { initHomeCarousel } from "../carousels/home-carousel.js"
 import { initShareholdersCarousel } from "../carousels/about-shareholders.js"
@@ -33,6 +33,7 @@ barba.init({
                 current.container.remove()
             },
             async enter({ next }) {
+                lenis.scrollTo(0, { immediate: true })
                 await gsap.from(next.container, {
                     opacity: 0,
                     duration: 0.3,

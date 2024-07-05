@@ -1,36 +1,49 @@
 <section class="section home-blogs">
     <div class="home-blogs__header">
-        @@include("components/section-subtitle.html", {"text" : "Blog and News", "iconName":
-        "blogs-icon"})
-        <h2 class="h2 home-blogs__title">Explore Our Latest news and articles</h2>
+        <div class="row">
+            <div class="col-md-3">
+                @@include("components/section-subtitle.html", {"text" : "Blog and News", "iconName":
+                "blogs-icon"})
+            </div>
+
+            <div class="col-md-9">
+                <h2 class="h2 home-blogs__title">Explore Our Latest news and articles</h2>
+            </div>
+        </div>
     </div>
-    <div class="home-blogs__cards">
-        <div class="home-blogs__card">
-            <div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="home-blogs__card">
+                <div>
+                    <p class="home-blogs__card-title">
+                        Harnessing Africa's Agricultural Strength: Soy Protein as a Pillar of Food
+                        Security
+                    </p>
+                </div>
+                <div class="home-blogs__card-info">
+                    <div class="home-blogs__card-date">June 10, 2024</div>
+                    @@include("components/buttons/arrow-btn.html", {"withoutText":"withoutText"})
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="home-blogs__card">
                 <p class="home-blogs__card-title">
-                    Harnessing Africa's Agricultural Strength: Soy Protein as a Pillar of Food
-                    Security
+                    Africa's Soy Protein Boom: Unleashing the Power of the Emerging Breadbasket
                 </p>
-            </div>
-            <div class="home-blogs__card-info">
-                <div class="home-blogs__card-date">June 10, 2024</div>
-                @@include("components/buttons/arrow-btn.html", {"withoutText":"withoutText"})
-            </div>
-        </div>
-        <div class="home-blogs__card">
-            <p class="home-blogs__card-title">
-                Africa's Soy Protein Boom: Unleashing the Power of the Emerging Breadbasket
-            </p>
-            <div class="home-blogs__card-info">
-                <div class="home-blogs__card-date">June 3, 2024</div>
-                @@include("components/buttons/arrow-btn.html", {"withoutText":"withoutText"})
+                <div class="home-blogs__card-info">
+                    <div class="home-blogs__card-date">June 3, 2024</div>
+                    @@include("components/buttons/arrow-btn.html", {"withoutText":"withoutText"})
+                </div>
             </div>
         </div>
-        <div class="home-blogs__card black bg-gray">
-            <p class="home-blogs__card-title">All News</p>
-            <div class="home-blogs__card-info">
-                <div class="home-blogs__card-date">Go to news</div>
-                @@include("components/buttons/arrow-btn.html", {"withoutText":"withoutText"})
+        <div class="col-md-4">
+            <div class="home-blogs__card black bg-gray">
+                <p class="home-blogs__card-title">All News</p>
+                <div class="home-blogs__card-info">
+                    <div class="home-blogs__card-date">Go to news</div>
+                    @@include("components/buttons/arrow-btn.html", {"withoutText":"withoutText"})
+                </div>
             </div>
         </div>
     </div>

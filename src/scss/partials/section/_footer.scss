@@ -1,15 +1,14 @@
 .footer {
-    display: flex;
     height: 540rem;
     padding: 56rem 56rem 32rem;
     background: var(--color-gray-200);
 
     &__left-side,
     &__right-side {
-        flex: 50%;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        height: 452rem;
     }
 
     &__logo {

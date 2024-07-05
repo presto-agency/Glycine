@@ -2,7 +2,7 @@ import barba from "@barba/core"
 import gsap from "gsap"
 
 import { initHover } from "../buttons/initHover.js"
-import { growingPlant } from "../animation/growing-plant.js"
+import { growingPlant } from "../animation/growing-plant/growing-plant.js"
 import { parallax } from "../parallax.js"
 import { lottieAnimations } from "../animation/lottie.js"
 import { initLenisScroll, lenis } from "../scroll.js"

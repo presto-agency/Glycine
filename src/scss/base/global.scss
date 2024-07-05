@@ -25,6 +25,19 @@ body {
     }
 }
 
+body::before {
+    content: "";
+    display: block;
+    height: 8rem;
+    background-color: #fff;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 100;
+}
+
 .section {
     position: relative;
     padding: 0 56rem;

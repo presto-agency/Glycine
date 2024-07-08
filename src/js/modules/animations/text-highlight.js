@@ -2,7 +2,7 @@ import GSAP, { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger.js"
 
 export const textHighlight = () => {
-    const textContainers = document.querySelectorAll("[text-highlight-on-scrol]")
+    const textContainers = document.querySelectorAll("[data-highlight-on-scroll]")
 
     textContainers.forEach((textContainer) => {
         const text = textContainer.textContent.trim()

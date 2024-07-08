@@ -3,8 +3,7 @@ import lottie from "lottie-web"
 const loadLottieAnimation = (containerId, path) => {
     const container = document.getElementById(containerId)
     if (!container) {
-        console.warn(`Container with ID "${containerId}" not found.`)
-        return null
+        return
     }
 
     return lottie.loadAnimation({

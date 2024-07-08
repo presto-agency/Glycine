@@ -2,16 +2,14 @@ import barba from "@barba/core"
 import gsap from "gsap"
 
 import { initHover } from "../buttons/initHover.js"
-import { growingPlant } from "../animation/growing-plant/growing-plant.js"
 import { parallax } from "../parallax.js"
-import { lottieAnimations } from "../animation/lottie.js"
 import { initLenisScroll, lenis } from "../scroll.js"
 import { initTooltips } from "../tooltips.js"
 import { initHomeCarousel } from "../carousels/home-carousel.js"
 import { initShareholdersCarousel } from "../carousels/about-shareholders.js"
 import { initMissionCarousel } from "../carousels/about-mission.js"
-import { textHighlight } from "../animation/text-highlight.js"
 import { languageSelect } from "../languageSelect.js"
+import { growingPlant, textHighlight, lottieAnimations } from "../animations/index.js"
 
 barba.init({
     transitions: [

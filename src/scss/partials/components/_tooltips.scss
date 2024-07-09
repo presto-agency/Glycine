@@ -10,7 +10,8 @@ $bg-tooltip: #191919;
     pointer-events: none;
     opacity: 0;
     transform: translateY(-10rem);
-    transition: opacity 0.3s ease, transform 0.3s ease;
+    transition: opacity var(--transition-duration) var(--transition-easing),
+        transform var(--transition-duration) var(--transition-easing);
 
     &.visible {
         opacity: 1;

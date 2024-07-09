@@ -1,5 +1,5 @@
 import barba from "@barba/core"
-import gsap from "gsap"
+import GSAP from "gsap"
 
 import { initHover } from "../buttons/initHover.js"
 import { parallax } from "../parallax.js"
@@ -10,41 +10,14 @@ import { initShareholdersCarousel } from "../carousels/about-shareholders.js"
 import { initMissionCarousel } from "../carousels/about-mission.js"
 import { languageSelect } from "../languageSelect.js"
 import { growingPlant, textHighlight, lottieAnimations } from "../animations/index.js"
-
-barba.init({
-    transitions: [
-        {
-            name: "general",
-
-            once: ({ next }) => {
-                return gsap.from(next.container, {
-                    opacity: 0,
-                    duration: 0.3,
-                })
-            },
-
-            async leave({ current }) {
-                await gsap.to(current.container, {
-                    opacity: 0,
-                    duration: 0.3,
-                })
-                current.container.remove()
-            },
-            async enter({ next }) {
-                lenis.scrollTo(0, { immediate: true })
-                await gsap.from(next.container, {
-                    opacity: 0,
-                    duration: 0.3,
-                })
-            },
-        },
-    ],
-})
+import { createTimeline } from "./animations/createTimeline.js"
+import { activeLinkTransition } from "./animations/activeLinkTransitions.js"
+import { toggleActiveLink } from "./toggleActiveLink.js"
+import { transition } from "../../config/transitions.js"
 
 barba.hooks.afterEnter(({ next }) => {
     languageSelect()
     initLenisScroll()
-    growingPlant(next)
     initHover()
     textHighlight()
     parallax()
@@ -53,4 +26,41 @@ barba.hooks.afterEnter(({ next }) => {
     initHomeCarousel()
     initShareholdersCarousel()
     initMissionCarousel()
+})
+
+let removeScrollListener
+
+barba.init({
+    transitions: [
+        {
+            name: "general",
+            once: ({ next }) => {
+                ;({ removeScrollListener } = growingPlant(next))
+
+                GSAP.from(next.container, {
+                    opacity: 0,
+                    duration: transition.opacity.duration,
+                })
+            },
+            async leave({ current }) {
+                await GSAP.to(current.container, {
+                    opacity: 0,
+                    duration: transition.opacity.duration,
+                })
+                current.container.remove()
+                if (typeof removeScrollListener === "function") {
+                    removeScrollListener()
+                }
+            },
+            async enter({ next }) {
+                lenis.scrollTo(0, { immediate: true })
+                ;({ removeScrollListener } = growingPlant(next))
+
+                await GSAP.from(next.container, {
+                    opacity: 0,
+                    duration: transition.opacity.duration,
+                })
+            },
+        },
+    ],
 })

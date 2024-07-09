@@ -1,5 +1,6 @@
 import GSAP, { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger.js"
+import { transition } from "../../config/transitions.js"
 
 export const textHighlight = () => {
     const textContainers = document.querySelectorAll("[data-highlight-on-scroll]")
@@ -21,9 +22,9 @@ export const textHighlight = () => {
                 toggleActions: "play none none reverse",
             },
             opacity: 1,
-            stagger: 0.1,
-            ease: "power1.inOut",
-            duration: 0.7,
+            duration: transition.textHighlight.duration,
+            stagger: transition.textHighlight.stagger,
+            ease: transition.textHighlight.ease,
         })
     })
 }

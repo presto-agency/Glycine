@@ -3,10 +3,10 @@
     @@include("components/head.html", {"title": "Glycine / Home page"})
 
     <body>
-        @@include('sections/header.html')
+        <noscript> You need to enable JavaScript to run this app. </noscript>
         <div data-barba="wrapper">
             <main data-barba="container" data-barba-namespace="home">
-                @@include('sections/home/home-hero.html')
+                @@include('sections/header.html') @@include('sections/home/home-hero.html')
                 @@include('sections/home/home-advantages.html')
                 @@include('sections/home/home-carousel.html')
                 @@include('sections/home/home-about.html')
@@ -15,7 +15,9 @@
                 @@include('sections/home/home-blogs.html') @@include('sections/action-section.html')
             </main>
         </div>
+
         @@include('sections/footer.html')
+
         <script src="js/app.min.js"></script>
     </body>
 </html>

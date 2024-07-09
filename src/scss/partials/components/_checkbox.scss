@@ -29,7 +29,7 @@
             width: 18rem;
             height: 18rem;
             border: 2rem solid #8c8c8c;
-            transition: border-color 0.3s ease;
+            transition: border-color var(--transition-duration) var(--transition-easing);
 
             &::after {
                 content: "";

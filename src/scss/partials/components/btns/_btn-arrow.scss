@@ -17,7 +17,7 @@
 
         position: relative;
         overflow: hidden;
-        transition: background 0.3s;
+        transition: background var(--transition-duration) var(--transition-easing);
 
         &:hover {
             background: var(--color-primary-hover);
@@ -32,7 +32,7 @@
             background-image: url("../img/svgicons/arrow-right.svg");
             background-size: contain;
             background-repeat: no-repeat;
-            transition: transform 0.3s ease;
+            transition: transform var(--transition-duration) var(--transition-easing);
         }
 
         &::before {
@@ -53,7 +53,7 @@
         .text-overlay {
             white-space: nowrap;
             position: relative;
-            transition: transform 0.3s ease;
+            transition: transform var(--transition-duration) var(--transition-easing);
         }
 
         .text-overlay {

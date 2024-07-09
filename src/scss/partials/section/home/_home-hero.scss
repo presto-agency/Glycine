@@ -8,6 +8,7 @@
         align-items: center;
         justify-content: center;
         height: calc(100vh - 8rem);
+        min-height: 600rem;
         background: var(--color-black);
         text-align: center;
         z-index: 0;
@@ -19,7 +20,6 @@
         flex-direction: column;
         align-items: center;
         height: max-content;
-        transition: height 1s, opacity 3s;
     }
 
     &__top-btn {
@@ -94,6 +94,5 @@
         width: 100%;
         height: 40%;
         object-fit: contain;
-        transition: all 1s ease-in-out;
     }
 }

@@ -5,12 +5,17 @@ import { ScrollToPlugin } from "gsap/ScrollToPlugin.js"
 
 gsap.registerPlugin(ScrollToPlugin)
 
-import { checkHeaderSticky } from "./checkHeaderSticky.js"
+import { checkingAboveAnimateSection } from "./checkingAboveAnimateSection.js"
 import { firstGrowingUp } from "./firstGrowing.js"
 import { changingFrames } from "./changingFrames.js"
-import { infoBlock, nextSection, plantFrames, skipBtn, sliderElement } from "./elements.js"
 
 export const growingPlant = () => {
+    const sliderElement = document.querySelector("#hero-slider")
+    const infoBlock = document.querySelector(".home-hero__info")
+    const skipBtn = document.querySelector(".home-hero__skip-btn")
+    const plantFrames = document.querySelectorAll(".plant-frame")
+    const nextSection = document.querySelector(".home-advantages")
+
     if (sliderElement && skipBtn && infoBlock && plantFrames.length > 0) {
         const splide = new Splide(sliderElement, {
             type: "fade",
@@ -26,24 +31,35 @@ export const growingPlant = () => {
         })
 
         splide.mount()
-
-        checkHeaderSticky()
-
-        lenis.on("scroll", function ({ direction }) {
-            checkHeaderSticky()
-            firstGrowingUp()
-            changingFrames(direction, splide)
-        })
+        checkingAboveAnimateSection()
 
         const smoothScrollTo = (element) => {
+            lenis.off("scroll", handleScroll)
             GSAP.to(window, {
                 duration: 1,
                 scrollTo: { y: element.offsetTop - 100 },
             })
+            setTimeout(() => lenis.on("scroll", handleScroll), 1000)
         }
 
         skipBtn.addEventListener("click", () => {
             smoothScrollTo(nextSection)
         })
+
+        function handleScroll({ direction }) {
+            checkingAboveAnimateSection()
+            firstGrowingUp(infoBlock, skipBtn, plantFrames)
+            changingFrames(direction, splide, infoBlock, skipBtn, plantFrames)
+        }
+
+        lenis.on("scroll", handleScroll)
+
+        const removeScrollListener = () => {
+            lenis.off("scroll", handleScroll)
+        }
+
+        return {
+            removeScrollListener,
+        }
     }
 }

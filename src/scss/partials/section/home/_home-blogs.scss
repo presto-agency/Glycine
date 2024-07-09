@@ -23,28 +23,17 @@
         &:hover .btn-arrow__icon-box {
             background: var(--color-white);
         }
-        &::before {
-            content: "";
+        &-img {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url("../img/pages/home/blog.jpg");
-            background-position: center;
-            background-size: cover;
-            background-repeat: no-repeat;
+            inset: 0;
+            @include imageCover(center);
             opacity: 0;
-            transition: opacity 0.5s ease;
-            z-index: 1;
+            transition: opacity var(--transition-duration) var(--transition-easing);
+            z-index: -1;
         }
 
-        &:hover::before {
+        &:hover .home-blogs__card-img {
             opacity: 1;
-        }
-        > * {
-            position: relative;
-            z-index: 2;
         }
 
         &.bg-gray {

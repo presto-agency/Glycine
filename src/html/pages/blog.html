@@ -3,10 +3,10 @@
     @@include("components/head.html", {"title": "Glycine / Blogs"})
 
     <body>
-        @@include('sections/header.html', {})
         <div data-barba="wrapper">
             <main data-barba="container" data-barba-namespace="blogs">
-                @@include('sections/blogs/blogs-hero.html', {})
+                @@include('sections/header.html', {}) @@include('sections/blogs/blogs-hero.html',
+                {})
             </main>
         </div>
         @@include('sections/footer.html', {})

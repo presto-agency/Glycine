@@ -1,4 +1,4 @@
-import Tween from "gsap"
+import GSAP from "gsap"
 import { transition } from "../../config/transitions.js"
 
 export const initHover = () => {
@@ -42,7 +42,7 @@ export const initHover = () => {
 }
 
 const animateLabel = (label, fromY, toY, fromOpacity, toOpacity) => {
-    Tween.fromTo(
+    GSAP.fromTo(
         label,
         { y: fromY, opacity: fromOpacity },
         {
@@ -55,7 +55,7 @@ const animateLabel = (label, fromY, toY, fromOpacity, toOpacity) => {
 }
 
 const animateBackground = (bg, options) => {
-    Tween.to(bg, {
+    GSAP.to(bg, {
         ...options,
         duration: transition.scale.duration,
         ease: transition.scale.ease,

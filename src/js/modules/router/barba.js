@@ -14,6 +14,7 @@ import { createTimeline } from "./animations/createTimeline.js"
 import { activeLinkTransition } from "./animations/activeLinkTransitions.js"
 import { toggleActiveLink } from "./toggleActiveLink.js"
 import { transition } from "../../config/transitions.js"
+import { preloaderFunc } from "../preloader.js"
 
 barba.hooks.afterEnter(({ next }) => {
     languageSelect()
@@ -28,14 +29,15 @@ barba.hooks.afterEnter(({ next }) => {
     initMissionCarousel()
 })
 
-let removeScrollListener
+let result
 
 barba.init({
     transitions: [
         {
             name: "general",
             once: ({ next }) => {
-                ;({ removeScrollListener } = growingPlant(next))
+                result = growingPlant(next)
+                preloaderFunc(next.container)
 
                 GSAP.from(next.container, {
                     opacity: 0,
@@ -48,13 +50,14 @@ barba.init({
                     duration: transition.opacity.duration,
                 })
                 current.container.remove()
-                if (typeof removeScrollListener === "function") {
-                    removeScrollListener()
+
+                if (result && typeof result.removeScrollListener === "function") {
+                    result.removeScrollListener()
                 }
             },
             async enter({ next }) {
                 lenis.scrollTo(0, { immediate: true })
-                ;({ removeScrollListener } = growingPlant(next))
+                result = growingPlant(next)
 
                 await GSAP.from(next.container, {
                     opacity: 0,

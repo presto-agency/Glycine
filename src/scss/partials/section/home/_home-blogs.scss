@@ -37,7 +37,12 @@
         }
 
         &.bg-gray {
-            background-color: var(--color-gray-300);
+            background: var(--color-gray-300);
+            transition: background var(--transition-duration) var(--transition-easing);
+
+            &:hover {
+                background: var(--color-black);
+            }
         }
         &-title {
             margin-bottom: 8rem;

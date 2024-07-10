@@ -28,9 +28,9 @@ export const transition = {
         duration: 2,
     },
     growingPlant: {
-        bottomStart: isMobile ? "-100rem" : "-130rem",
-        bottomEnd: isMobile ? "-10rem" : 0,
-        heightStart: isMobile ? "30%" : "40%",
+        bottomStart: isMobile ? "-100px" : "-130px",
+        bottomEnd: isMobile ? 0 : 0,
+        heightStart: isMobile ? "300px" : "350px",
         heightEnd: isMobile ? "80%" : "90%",
         duration: 0.7,
         ease: Linear.easeNone,

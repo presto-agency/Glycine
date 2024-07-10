@@ -4,9 +4,12 @@
 
     <body>
         <noscript> You need to enable JavaScript to run this app. </noscript>
+        <div id="preloader"></div>
+
         <div data-barba="wrapper">
+            @@include('sections/header.html')
             <main data-barba="container" data-barba-namespace="home">
-                @@include('sections/header.html') @@include('sections/home/home-hero.html')
+                @@include('sections/home/home-hero.html')
                 @@include('sections/home/home-advantages.html')
                 @@include('sections/home/home-carousel.html')
                 @@include('sections/home/home-about.html')

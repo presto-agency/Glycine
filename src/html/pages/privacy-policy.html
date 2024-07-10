@@ -3,15 +3,17 @@
     @@include("components/head.html", {"title": "Glycine / Privacy Policy"})
 
     <body>
-        @@include('sections/header.html', {})
-        <div data-barba="wrapper">
-            <main data-barba="container" data-barba-namespace="privacy-policy">
-                <!-- <div class="preloader" id="preloader"></div> -->
+        <noscript> You need to enable JavaScript to run this app. </noscript>
+        <div id="preloader"></div>
 
+        <div data-barba="wrapper">
+            @@include('sections/header.html', {})
+            <main data-barba="container" data-barba-namespace="privacy-policy">
                 <h1>Privacy Policy</h1>
             </main>
         </div>
         @@include('sections/footer.html', {})
+
         <script src="js/app.min.js"></script>
     </body>
 </html>

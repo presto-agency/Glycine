@@ -3,6 +3,9 @@
     @@include("components/head.html", {"title": "Glycine / Blogs"})
 
     <body>
+        <noscript> You need to enable JavaScript to run this app. </noscript>
+        <div id="preloader"></div>
+
         <div data-barba="wrapper">
             <main data-barba="container" data-barba-namespace="blogs">
                 @@include('sections/header.html', {}) @@include('sections/blogs/blogs-hero.html',
@@ -10,6 +13,7 @@
             </main>
         </div>
         @@include('sections/footer.html', {})
+
         <script src="js/app.min.js"></script>
     </body>
 </html>
